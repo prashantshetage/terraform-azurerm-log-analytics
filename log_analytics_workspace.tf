@@ -1,3 +1,11 @@
+// Random string to use in Log analytics workspace name
+resource "random_string" "workspace_name" {
+  length  = 4
+  special = false
+  upper   = false
+}
+
+
 // Log analytics workspace
 resource "azurerm_log_analytics_workspace" "workspace" {
   name                = local.workspace_name

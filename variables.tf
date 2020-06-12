@@ -85,5 +85,5 @@ variable "it_depends_on" {
 // Local Values
 locals {
   timeout_duration = "1h"
-  workspace_name   = "${var.workspace_prefix}${var.name}${var.workspace_suffix}"
+  workspace_name   = "${var.workspace_prefix}${var.name}${random_string.workspace_name.result}${var.workspace_suffix}"
 }
